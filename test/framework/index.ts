@@ -1,9 +1,6 @@
-import {Fixture, IFixtures, ITestFacade} from "cucumber-x";
+import {Fixture, ITestFacade} from "cucumber-x";
+import {IAppFixtures} from "../fixtures/interfaces/IAppFixtures";
 
-//all fixtures are registered and exposed thru this
-export interface IAppFixtures extends IFixtures {
-
-}
 
 //this is global to scenarios
 export interface IAppTestFacade extends ITestFacade {
@@ -12,6 +9,10 @@ export interface IAppTestFacade extends ITestFacade {
 
 //all your fixtures will extend this class
 export class BaseFixture extends Fixture {
+    constructor() {
+        super();
+    }
+
     public getFixtures(): IAppFixtures {
         return super.getFixtures() as IAppFixtures;
     }

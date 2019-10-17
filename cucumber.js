@@ -2,7 +2,7 @@ const commonSettings = [
     'test/features/**/*.feature', // Specify our feature files
     '--require-module ts-node/register', // Load TypeScript module
     '--require test/step_definitions/**/*.ts', // Load step definitions
-    '--require test/interfaces/**/*.ts', // Load interface definitions
+    '--require test/framework/**/*.ts', // Load interface definitions
     '-f json:build/test-results/cucumber_report.json',
     '--format progress-bar', // Load custom formatter
     '--format node_modules/cucumber-pretty' // Load custom formatter
