@@ -1,7 +1,6 @@
 import {BaseFixture} from "../framework";
-import {FixtureConstants} from "./interfaces/FixtureConstants";
+import {FixtureTypes, IAppFixtures} from "./interfaces/IAppFixtures";
 import {MyDietFixture} from "./MyDietFixture";
-import {IAppFixtures} from "./interfaces/IAppFixtures";
 
 
 // this is just an another fixture class type but it helps you register other fixtures
@@ -11,11 +10,11 @@ export class AppFixtures extends BaseFixture implements IAppFixtures {
     }
 
     setup() {
-        this.getContainer().inject(FixtureConstants.MY_DIET_FIXTURE, MyDietFixture);
+        this.getContainer().inject(FixtureTypes.MY_DIET_FIXTURE, MyDietFixture);
     }
 
     getDietFixture(instanceName?: string | null) {
-        return this.createFixture(FixtureConstants.MY_DIET_FIXTURE, instanceName);
+        return this.createFixture(FixtureTypes.MY_DIET_FIXTURE, instanceName);
     }
 
     createFixture(beanName: string, instanceName?: string | null, ...args: any): any {

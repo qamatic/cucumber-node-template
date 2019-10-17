@@ -1,5 +1,6 @@
-import {IMyDietFixture} from "./interfaces/IDietFixture";
+
 import {BaseFixture} from "../framework";
+import {IMyDietFixture} from "./interfaces/IAppFixtures";
 
 
 export class MyDietFixture extends BaseFixture implements IMyDietFixture {
